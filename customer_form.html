@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>Customer Registration Form</title>
+<script type="text/javascript">      
+
+function validateEmail(email) 
+{
+    //var re = /\S+@\S+/;
+    var re=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+ if(!re.test(email))
+{alert( "Please provide a valid Email!" );
+return re.test(email);}
+}
+
+function validate()
+      {
+      
+         if( document.myForm.fname.value == "" )
+         {
+            alert( "Please provide your First Name!" );
+            document.myForm.fname.focus() ;
+            return false;
+         }
+         if( document.myForm.lname.value == "" )
+         {
+            alert( "Please provide your Last Name!" );
+            document.myForm.lname.focus() ;
+            return false;
+         }
+
+         if( document.myForm.add.value == "" )
+         {
+            alert( "Please provide your Adress!" );
+            document.myForm.add.focus() ;
+            return false;
+         }
+
+         if( document.myForm.age.value == "" )
+         {
+            alert( "Please provide your Age!" );
+            document.myForm.age.focus() ;
+            return false;
+         } 
+         
+         if( document.myForm.eid.value == "" )
+         {
+            alert( "Please provide your Email!" );
+            document.myForm.eid.focus() ;
+            return false;
+         } 
+     
+if( document.myForm.city.value == "" )
+         {
+            alert( "Please provide your city!" );
+            document.myForm.city.focus() ;
+            return false;
+         }  
+return validateEmail(document.myForm.eid.value);
+
+         return( true );
+      }
+</script>
+</head>
+<body bgcolor="#ff8c1a">
+<h1><center><font color="#730099">Customer Registration Form</font></center></h1>
+<form name="myForm" method="POST" action="https://localhost/tushit/webdev/connect1.php" onsubmit="return(validate());">
+<center>
+<b>First Name:</b><input type="text" name="fname" maxlength="50">
+<br><br><b>Last Name:<input type="text" name="lname" maxlength="20">
+<br><br>
+<b>Gender:</b>
+male:<input type="radio" name="gender" value="M" checked>
+female:<input type="radio" name="gender" value="F">
+<br><br><b>Adress:</b><input type="text" name="add" maxlength="50">
+<br><br><b>Age:</b><input type="text" name="age" maxlength="3">
+<br><br><b>Email id:</b><input type="text" name="eid" maxlength="40">
+<br><br><b>City:</b><input type="text" name="city" maxlength="20">
+<p><input type="submit" name="fsubmit" value="send info">
+<input type="reset" value="reset">
+</p>
+</center>
+</form>
+</body>
+</html>
